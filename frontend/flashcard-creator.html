@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subject Creator</title>
-    <link rel="stylesheet" href="./assets/css/create.css">
+    <title>Flashcard Creator</title>
+    <link rel="stylesheet" href="./assets/css/flashcard-creator.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
@@ -60,18 +60,31 @@
 
     <!-- Main Content -->
     <div class="main-content">
-        <div class="card">
-            <div class="card-title">Enter Subject Name:</div>
-            <div class="input-wrapper">
-                <input type="text" class="input-field" placeholder="Enter subject name" id="subjectInput">
+        <!-- Added header with subject title -->
+        <div class="header" id="subjectHeader">Subject Name</div>
+
+        <!-- Updated content area with Front/Back flashcard sections -->
+        <div class="content-area">
+            <!-- Front Side -->
+            <div class="card-section">
+                <label class="section-label">Front</label>
+                <textarea id="frontText" placeholder="Write your question here"></textarea>
             </div>
-            <div class="button-wrapper">
-                <button class="create-button" id="createBtn">Create</button>
+
+            <!-- Back Side -->
+            <div class="card-section">
+                <label class="section-label">Back</label>
+                <textarea id="backText" placeholder="Write your answer here"></textarea>
+            </div>
+
+            <!-- Generate Button -->
+            <div class="button-container">
+                <button class="generate-button" id="generateBtn">Generate</button>
             </div>
         </div>
     </div>
 
-    <script src="./assets/js/create.js"></script>
+    <script src="./assets/css/flashcard-creator.css"></script>
     <script src="./assets/js/utils.js"></script>
 </body>
 </html>

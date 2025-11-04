@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Science - Flashcard</title>
+    <link rel="stylesheet" href="./assets/css/deck.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="logo">
+            <div class="logo-icon"><img src="./images/icons/logo.svg" alt="logo-icon"></div>
+            <div class="logo-text">
+                <span>SmartAnki</span>
+            </div>
+            <button class="nav-slider-icon" id="navSlider">
+                <img src="./images/icons/sidebar-primary.svg" alt="nav-slider-icon">
+            </button>
+        </div>
+
+        <!-- My Deck item - now clickable -->
+        <div class="nav-item clickable" id="myDeckNav">
+            <div class="nav-icon"><img src="./images/icons/deck.svg" alt="deck-icon"></div>
+            <div>My Deck</div>
+        </div>
+
+        <div class="nav-item clickable" id="athenaAINav">
+            <div class="nav-icon"><img src="./images/icons/ai-icon.svg" alt="athena-icon"></div>
+            <div>AthenaAI</div>
+        </div>
+
+        <button class="add-btn-sidebar"><span>Add</span></button>
+
+        <div class="library-section">
+            <div class="library-header">
+                <span>Library</span>
+                <div class="library-icons">
+                    <button><img src="./images/icons/search-icon.svg" alt="search-icon"></button>
+                </div>
+            </div>
+
+            <div class="category-item">
+                <div class="category-dot category-1"></div>
+                <span>Computer science</span>
+            </div>
+
+            <div class="category-item">
+                <div class="category-dot category-2"></div>
+                <span>Compiler construction</span>
+            </div>
+
+            <div class="category-item">
+                <div class="category-dot category-3"></div>
+                <span>Software Engineering</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <div class="header">
+            <h1>Computer Science</h1>
+        </div>
+        
+        <!-- Flashcard Container -->
+        <div class="flashcard-container">
+            <!-- Side Navigation Arrows -->
+            <div class="side-nav-arrows">
+                <button class="side-arrow-btn">&lt;</button>
+                <button class="side-arrow-btn">&gt;</button>
+            </div>
+
+            <div class="card-wrapper">
+                <div class="card" id="flashcard">
+                    <!-- Front Side (Question) -->
+                    <div class="card-face card-front">
+                        <div class="card-content">
+                            <div class="card-title">Computer Science</div>
+                            <div class="card-text" id="frontText">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                            </div>
+                            <div class="flip-indicator" onclick="flipCard()">Show Answer</div>
+                        </div>
+                    </div>
+
+                    <!-- Back Side (Answer) -->
+                    <div class="card-face card-back">
+                        <div class="card-content">
+                            <div class="card-title">Computer Science</div>
+                            <div class="card-text" id="backText">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                            </div>
+                            <div class="flip-indicator" onclick="flipCard()">Show Question</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <div class="controls">
+                    <!-- Edit/Explain Buttons - Always visible -->
+                    <div class="control-group edit-explain-controls">
+                        <button class="btn btn-secondary" id="editBtn">Edit</button>
+                        <button class="btn btn-secondary" id="explainBtn">Explain</button>
+                    </div>
+
+                    <!-- Difficulty Buttons - Show when card is flipped -->
+                    <div class="difficulty-controls">
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <span class="difficulty-label">1 min</span>
+                            <button class="btn btn-difficulty">Again</button>
+                        </div>
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <span class="difficulty-label">6 min</span>
+                            <button class="btn btn-difficulty">Hard</button>
+                        </div>
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <span class="difficulty-label">10 min</span>
+                            <button class="btn btn-difficulty">Good</button>
+                        </div>
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <span class="difficulty-label">1 day</span>
+                            <button class="btn btn-difficulty">Easy</button>
+                        </div>
+                    </div>
+
+                    <!-- Edit Controls - Show when in edit mode -->
+                    <div class="control-group edit-controls">
+                        <button class="btn btn-secondary" id="saveBtn">Save</button>
+                        <button class="btn btn-secondary" id="cancelBtn">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/deck.js"></script>
+    <script src="./assets/js/utils.js"></script>
+</body>
+</html>

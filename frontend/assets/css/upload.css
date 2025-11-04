@@ -1,0 +1,227 @@
+        /* Main Content Area */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Profile Icon - Positioned in top right */
+        .profile-avatar {
+            /* z-index: 10; */
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            /* width: 44px;
+            height: 44px; */
+            border-radius: 50%;
+            background-color: #ddd;
+            cursor: pointer;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* Content Area */
+        .content-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            background-color: #f5f5f5;
+        }
+
+        .welcome-text {
+            font-size: 48px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #1F2937;
+        }
+
+        /* Upload Container - Straight rectangle like search bar */
+        .upload-container {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            max-width: 600px;
+            width: 100%;
+            height: 60px;
+        }
+
+        .upload-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0 20px;
+            flex: 1;
+            cursor: pointer;
+            height: 100%;
+            transition: background-color 0.2s;
+        }
+
+        .upload-section:hover {
+            background-color: #f9fafb;
+        }
+
+        .upload-icon {
+            width: 24px;
+            height: 24px;
+            background-color: #000;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .upload-text {
+            font-size: 16px;
+            color: #6B7280;
+        }
+
+        .file-name-display {
+            font-size: 16px;
+            color: #1F2937;
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        /* Send Button - Right side with upward arrow */
+        .send-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 0 24px;
+            background-color: black;
+            color: white;
+            border: none;
+            height: 100%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .send-btn:hover {
+            background-color: #505252;
+        }
+
+        .send-btn:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        .send-icon {
+            font-size: 18px;
+            transform: rotate(-90deg);
+        }
+
+        #fileInput {
+            display: none;
+        }
+
+        /* Scroll up button */
+        .scroll-up-btn {
+            position: absolute;
+            right: 40px;
+            bottom: 40px;
+            width: 56px;
+            height: 56px;
+            background-color: #000;
+            border-radius: 50%;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .scroll-up-btn.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .scroll-up-btn:hover {
+            background-color: #1F2937;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transform: scale(1.05);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 80px;
+            }
+            
+            .logo-text, .nav-item div:last-child, .library-header span, .category-item span {
+                display: none;
+            }
+            
+            .welcome-text {
+                font-size: 32px;
+            }
+            
+            .upload-container {
+                max-width: 400px;
+                height: 50px;
+            }
+            
+            .upload-section {
+                padding: 0 15px;
+            }
+            
+            .upload-icon {
+                width: 20px;
+                height: 20px;
+                font-size: 12px;
+            }
+            
+            .upload-text, .file-name-display {
+                font-size: 14px;
+            }
+            
+            .send-btn {
+                padding: 0 18px;
+                font-size: 14px;
+            }
+            
+            .scroll-up-btn {
+                right: 20px;
+                bottom: 20px;
+                width: 48px;
+                height: 48px;
+                font-size: 20px;
+            }
+            
+            .profile-pic {
+                top: 15px;
+                right: 15px;
+                width: 35px;
+                height: 35px;
+            }
+        }

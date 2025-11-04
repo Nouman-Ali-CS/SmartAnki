@@ -1,1 +1,91 @@
-<!-- Upload file -> AI gernerate a card -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartAnki - Flashcard Learning App</title>
+    <link rel="stylesheet" href="./assets/css/upload.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+        <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="logo">
+            <div class="logo-icon"><img src="./images/icons/logo.svg" alt="logo-icon"></div>
+            <div class="logo-text">
+                <span>SmartAnki</span>
+            </div>
+            <button class="nav-slider-icon" id="navSlider">
+                <img src="./images/icons/sidebar-primary.svg" alt="nav-slider-icon">
+            </button>
+        </div>
+
+        <!-- My Deck item - now clickable -->
+        <div class="nav-item clickable" id="myDeckNav">
+            <div class="nav-icon"><img src="./images/icons/deck.svg" alt="deck-icon"></div>
+            <div>My Deck</div>
+        </div>
+
+        <div class="nav-item clickable" id="athenaAINav">
+            <div class="nav-icon"><img src="./images/icons/ai-icon.svg" alt="athena-icon"></div>
+            <div>AthenaAI</div>
+        </div>
+
+        <button class="add-btn-sidebar"><span>Add</span></button>
+
+        <div class="library-section">
+            <div class="library-header">
+                <span>Library</span>
+                <div class="library-icons">
+                    <button><img src="./images/icons/search-icon.svg" alt="search-icon"></button>
+                </div>
+            </div>
+
+            <div class="category-item">
+                <div class="category-dot category-1"></div>
+                <span>Computer science</span>
+            </div>
+
+            <div class="category-item">
+                <div class="category-dot category-2"></div>
+                <span>Compiler construction</span>
+            </div>
+
+            <div class="category-item">
+                <div class="category-dot category-3"></div>
+                <span>Software Engineering</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Profile Icon Only -->
+<div class="profile-avatar">
+                    <img src="./images/Person 2.jpg" alt="Profile">
+                </div>
+        <div class="content-area">
+            <h1 class="welcome-text">Welcome to SmartAnki App</h1>
+
+            <div class="upload-container">
+                <div class="upload-section" id="uploadSection">
+                    <div class="upload-icon">+</div>
+                    <span class="upload-text" id="uploadText">Upload word file</span>
+                    <span class="file-name-display" id="fileNameDisplay"></span>
+                    <input type="file" id="fileInput" accept=".doc,.docx,.txt,.pdf" />
+                </div>
+                
+                <button class="send-btn" id="sendBtn" disabled>
+                    <span class="send-icon">➤</span>
+                    <span>Send</span>
+                </button>
+            </div>
+
+            <button class="scroll-up-btn" id="scrollUpBtn" title="Scroll to top">↑</button>
+        </div>
+    </div>
+
+    <script src="./assets/js/upload.js"></script>
+    <script src="./assets/js/utils.js"></script>
+</body>
+</html>

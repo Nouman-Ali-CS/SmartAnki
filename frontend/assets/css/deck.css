@@ -1,0 +1,294 @@
+
+/* Main Content Area */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    overflow: hidden;
+}
+/* Header */
+.header {
+    background-color: #000;
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.header h1 {
+    font-size: 28px;
+    font-weight: 300;
+}
+/* Flashcard Container */
+.flashcard-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+    position: relative;
+}
+/* Card Wrapper */
+.card-wrapper {
+    perspective: 1000px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+.card {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+.card.flipped {
+    transform: rotateY(180deg);
+}
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    padding: 30px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+.card-front {
+    background: linear-gradient(135deg, #d0e8e8 0%, #c8e0e0 100%);
+    color: #000;
+}
+.card-back {
+    background: linear-gradient(135deg, #a8d5d5 0%, #9cc9c9 100%);
+    color: #000;
+    transform: rotateY(180deg);
+}
+.card-content {
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+.card-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+.card-text {
+    font-size: 18px;
+    line-height: 1.5;
+    max-width: 500px;
+    color: #444;
+    margin-bottom: 15px;
+    width: 100%;
+    overflow-y: auto;
+    max-height: 150px;
+    padding: 8px 15px;
+    /* Custom scrollbar styling */
+    scrollbar-width: thin;
+    scrollbar-color: #7fb3b3 #e0e0e0;
+}
+/* Custom scrollbar for Webkit browsers */
+.card-text::-webkit-scrollbar {
+    width: 6px;
+}
+.card-text::-webkit-scrollbar-track {
+    background: #e0e0e0;
+    border-radius: 10px;
+}
+.card-text::-webkit-scrollbar-thumb {
+    background-color: #7fb3b3;
+    border-radius: 10px;
+}
+.card-text::-webkit-scrollbar-thumb:hover {
+    background-color: #6a9898;
+}
+.flip-indicator {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #666;
+    font-size: 16px;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+.flip-indicator:hover {
+    color: #000;
+}
+/* Navigation Arrows - Horizontally Centered */
+.side-nav-arrows {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    pointer-events: none;
+    z-index: 10;
+}
+.side-arrow-btn {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid #999;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    pointer-events: auto;
+    color: #666;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+.side-arrow-btn:hover {
+    background-color: rgba(255, 255, 255, 1);
+    color: #000;
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+/* Control Buttons */
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin-top: 40px;
+    width: 100%;
+}
+.control-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+}
+.btn {
+    padding: 10px 35px;
+    border: none;
+    border-radius: 22px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+.btn-secondary {
+    background-color: #7fb3b3;
+    color: white;
+}
+.btn-secondary:hover {
+    background-color: #6a9898;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+/* Difficulty Buttons */
+.difficulty-controls {
+    display: none;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+/* Show difficulty buttons only when card is flipped */
+.card.flipped ~ .controls .difficulty-controls {
+    display: flex;
+}
+.btn-difficulty {
+    background-color: #7fb3b3;
+    color: white;
+    padding: 10px 25px;
+    min-width: 90px;
+}
+.btn-difficulty:hover {
+    background-color: #6a9898;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.difficulty-label {
+    font-size: 11px;
+    color: #999;
+    display: block;
+    margin-bottom: 4px;
+}
+/* Edit Mode Styles */
+.edit-mode .card-text {
+    border: 2px dashed #7fb3b3;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+.edit-controls {
+    display: none;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+}
+.edit-mode .edit-explain-controls {
+    display: none;
+}
+.edit-mode .edit-controls {
+    display: flex;
+}
+/* Hide difficulty buttons in edit mode */
+.edit-mode .difficulty-controls {
+    display: none !important;
+}
+/* Disable card flip in edit mode */
+.edit-mode .card {
+    cursor: default;
+}
+/* Responsive */
+@media (max-width: 768px) {
+    .flashcard-container {
+        padding: 20px 15px 15px 15px;
+    }
+    .card-face {
+        padding: 25px;
+    }
+    .side-nav-arrows {
+        display: none;
+    }
+    .card {
+        height: 300px;
+    }
+    .header {
+        padding: 12px 20px;
+    }
+    .header h1 {
+        font-size: 24px;
+    }
+    
+    .controls {
+        gap: 20px;
+    }
+    
+    .control-group {
+        gap: 15px;
+    }
+    
+    .btn {
+        padding: 8px 25px;
+        font-size: 14px;
+    }
+    
+    .btn-difficulty {
+        padding: 8px 20px;
+        min-width: 80px;
+    }
+}
